@@ -23,7 +23,7 @@
                         <Storyboard x:Name="MoveResizeStoryboard">
                             <!--<DoubleAnimation Duration="0:0:10" To="5" Storyboard.TargetName="scale1" Storyboard.TargetProperty="(ScaleX)" />
                             <DoubleAnimation Duration="0:0:10" To="3" Storyboard.TargetName="scale1" Storyboard.TargetProperty="(ScaleY)" />-->
-                            <DoubleAnimation Duration="0:0:10" To="5" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[0].(ScaleTransform.ScaleX)" />
+                            <DoubleAnimation Duration="0:0:3" AutoReverse="True" RepeatBehavior="Forever" To="5" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[0].(ScaleTransform.ScaleX)" />
                             <DoubleAnimation Duration="0:0:10" To="3" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[0].(ScaleTransform.ScaleY)" />
                             <DoubleAnimation Duration="0:0:10" To="400" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[1].(TranslateTransform.X)" />
                             <DoubleAnimation Duration="0:0:10" To="200" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[1].(TranslateTransform.Y)" />

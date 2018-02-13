@@ -27,6 +27,7 @@
         <StackPanel>
             <Button Click="OnButtonClick" Background="Green" Style="{StaticResource coolButtonStyle}" Width="300" Height="90">One</Button>
             <Button Click="OnButtonClick" Background="Yellow" Style="{StaticResource coolButtonStyle}" Width="300" Height="90">Two</Button>
+            <Button Content="Default Button" Style="{DynamicResource MySimpleButtonStyle}" />
         </StackPanel>
 
     </Grid>
