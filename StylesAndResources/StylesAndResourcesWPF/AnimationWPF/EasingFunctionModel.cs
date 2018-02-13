@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Animation;
+﻿using System.Windows.Media.Animation;
 
 namespace AnimationWPF
 {
     public class EasingFunctionModel
     {
-        public EasingFunctionModel(EasingFunctionBase easingFunction)
-        {
+        public EasingFunctionModel(EasingFunctionBase easingFunction) =>
             EasingFunction = easingFunction;
-        }
 
         public EasingFunctionBase EasingFunction { get; }
 
