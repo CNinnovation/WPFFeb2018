@@ -7,13 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Grid.RenderTransform>
-            <RotateTransform Angle="45" />
-        </Grid.RenderTransform>
+        <!--<Grid.RenderTransform>
+            <RotateTransform Angle="11" />
+        </Grid.RenderTransform>-->
         <Canvas Width="100" Height="100">
             <Ellipse Fill="Yellow" Stroke="Black"
                  StrokeThickness="7"
-                 Width="100" Height="100" />
+                 Width="100" Height="100" >
+                <Ellipse.RenderTransform>
+                    <RotateTransform Angle="11" />
+                </Ellipse.RenderTransform>
+            </Ellipse>
 
             <Ellipse Fill="Black"
                  Width="10" Height="15"
