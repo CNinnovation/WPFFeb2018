@@ -1,0 +1,45 @@
+﻿<Window x:Class="LayoutSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayoutSamples"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Width" Value="200" />
+                <Setter Property="Height" Value="90" />
+                <Setter Property="Background" Value="LightBlue" />
+            </Style.Setters>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Width="200" Height="30" Grid.Row="0" Grid.Column="0" Content="One"/>
+
+            <Button Style="{StaticResource redButton}" Height="40" Grid.Row="0" Grid.Column="1"  Content="Two" />
+            <Button  Grid.Row="1" Grid.ColumnSpan="2"  Content="Three" />
+
+            <Button Width="200" Grid.Row="2" Grid.Column="0" Content="Four" />
+            <Button Width="300" Grid.Row="2" Grid.Column="1">
+                <Button.Resources>
+                    
+                </Button.Resources>
+                Five</Button>
+
+        </Grid>
+    </Grid>
+</Window>
