@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BooksSample.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,17 @@ namespace BooksSample
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+       
+        private void addBook(object sender, RoutedEventArgs e)
+        {
+            //Book b = new Book("","","");
+            
+
+            ListBoxItem lbi = new ListBoxItem();
+            lbi.Content = new Book("Test Book", "Lesin", "999999999-99999");
+            BookList.Items.Add(lbi);
         }
     }
 }

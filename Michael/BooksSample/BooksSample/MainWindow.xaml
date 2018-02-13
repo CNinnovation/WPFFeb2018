@@ -13,6 +13,18 @@
         <models:Book x:Key="myBook" Title="Professional C# 7" Publisher="Wrox Press" Isbn="3747834783" />
     </Window.Resources>
     <Grid>
-        <Button Content="{StaticResource myBook}" />
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0" Name="BookList">
+
+        </ListBox>
+        <Button Grid.Row="1" Content="Add Book" Click="addBook"/>
+        <Button Grid.Row="2" Content="{StaticResource myBook}" />
+
     </Grid>
+    
 </Window>
