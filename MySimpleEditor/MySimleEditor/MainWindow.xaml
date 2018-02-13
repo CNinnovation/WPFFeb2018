@@ -1,0 +1,34 @@
+﻿<Window x:Class="MySimleEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySimleEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="OnOpen" />
+        <CommandBinding Command="local:MyCustomCommands.Schlumpfi" Executed="OnSchlumpfi" CanExecute="OnSchlumpfiCanExecute" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Command="Open" />
+                <MenuItem Header="Save" />
+                <Separator />
+                <MenuItem Header="Close" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Cut" Command="Cut" />
+                <MenuItem Header="Copy" Command="Copy" />
+                <MenuItem Header="Paste" Command="Paste" />
+                <MenuItem Header="Undo" Command="Undo" />
+            </MenuItem>
+            <MenuItem Header="Custom">
+                <MenuItem Header="Schlumpfi" Command="local:MyCustomCommands.Schlumpfi" />
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="text1" AcceptsReturn="True" AcceptsTab="True" />
+
+    </DockPanel>
+</Window>
