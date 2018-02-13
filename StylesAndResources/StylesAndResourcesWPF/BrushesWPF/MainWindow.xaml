@@ -117,11 +117,11 @@
                 </Button.Background>
             </Button>
 
-            <Button Width="200" Height="600" Foreground="White" Click="OnMediaButtonClick">
+            <Button Width="200" Height="200" Foreground="White" Click="OnMediaButtonClick">
                 <StackPanel>
                     <MediaElement x:Name="media1" Source="./IceSkating.mp4" 
         LoadedBehavior="Manual" />
-                    <Border Height="200">
+                    <Border Height="100">
                         <Rectangle>
                             <Rectangle.Fill>
                                 <VisualBrush Opacity="0.35" Stretch="None" 
