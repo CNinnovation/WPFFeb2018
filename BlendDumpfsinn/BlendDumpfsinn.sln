@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlendDumpfsinn", "BlendDumpfsinn\BlendDumpfsinn.csproj", "{4F063C3F-5F1D-4292-9946-4C350467927F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F063C3F-5F1D-4292-9946-4C350467927F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F063C3F-5F1D-4292-9946-4C350467927F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F063C3F-5F1D-4292-9946-4C350467927F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F063C3F-5F1D-4292-9946-4C350467927F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6581E7C9-A8A5-4BBB-991B-ECE3FB2A6E05}
+	EndGlobalSection
+EndGlobal
