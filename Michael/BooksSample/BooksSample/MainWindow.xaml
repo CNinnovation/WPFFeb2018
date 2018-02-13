@@ -12,18 +12,45 @@
         <!-- use the XML alias to create a .NET object -->
         <models:Book x:Key="myBook" Title="Professional C# 7" Publisher="Wrox Press" Isbn="3747834783" />
     </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MainWindow.deleteBook" Executed="OnDeleteBook" CanExecute="OnDeleteBookCanExecute" />
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <ListBox Grid.Row="0" Name="BookList">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+             <ListBox  Name="BookList">
 
-        </ListBox>
-        <Button Grid.Row="1" Content="Add Book" Click="addBook"/>
-        <Button Grid.Row="2" Content="{StaticResource myBook}" />
+            </ListBox>
+        </StackPanel>
+        <DockPanel  Grid.Row="0" Grid.Column="2">
+            <Button Content="Dock=Top" DockPanel.Dock="Top"/>
+            <Button Content="Dock=Right" DockPanel.Dock="Right"/>
+            <Canvas DockPanel.Dock="Left">
+                
+            </Canvas>
+        </DockPanel>
+    
+        <Button  Grid.Row="1" Grid.Column="0" Content="Add Book" Click="addBook"/>
+        <Button  Grid.Row="1" Grid.Column="1" Content="Edit Book" />
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Content="Delete Book" Command="local:MainWindow.deleteBook"/>
+            <Button Grid.Row="1" Content="Change Color"/>
+        </Grid>
+
+
+        <!--<Button Content="{StaticResource myBook}" />-->
 
     </Grid>
     

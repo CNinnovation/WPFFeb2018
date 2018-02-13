@@ -2,6 +2,11 @@
 {
     public class Book
     {
+        public Book()
+        {
+
+        }
+
         public Book(string title, string publisher, string isbn)
         {
             Title = title;

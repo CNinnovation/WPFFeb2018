@@ -26,15 +26,42 @@ namespace BooksSample
             InitializeComponent();
         }
 
-       
+
         private void addBook(object sender, RoutedEventArgs e)
         {
             //Book b = new Book("","","");
-            
 
-            ListBoxItem lbi = new ListBoxItem();
-            lbi.Content = new Book("Test Book", "Lesin", "999999999-99999");
-            BookList.Items.Add(lbi);
+
+            //ListBoxItem lbi = new ListBoxItem();
+            //lbi.Content = new Book("Test Book", "Lesin", "999999999-99999");
+            BookList.Items.Add(new Book("Test Book", "Lesin", "999999999-99999"));
         }
+
+        public static readonly RoutedUICommand deleteBook = new RoutedUICommand("Do something", "DoSomething", typeof(RoutedUICommand));
+
+
+
+
+        private void OnDeleteBook(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (BookList.Items.Count > 0)
+            {
+                BookList.Items.RemoveAt(BookList.Items.Count-1);
+            }
+        }
+
+        private void OnDeleteBookCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (BookList.Items.Count > 0)
+            {
+                e.CanExecute = true;
+            }
+            else
+            {
+                e.CanExecute = false;
+            }
+
+        }
+
     }
 }
