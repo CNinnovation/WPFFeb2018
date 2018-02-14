@@ -103,6 +103,16 @@ namespace BooksSample
 
             Random x = new Random();
             BookListItems.Background = BrushList[x.Next(BrushList.Count)];
+
+            //foreach (var item in BookList)
+            //{
+            //    if (item.Id == (int)e.Parameter)
+            //    {
+            //        item.Background = BrushList[x.Next(BrushList.Count)];
+            //    }
+            //}
+
+
         }
 
     }

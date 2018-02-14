@@ -90,7 +90,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Button Grid.Row="0" Content="Delete Book" Command="local:MainWindow.deleteBook" CommandParameter="{Binding /Id}"/>
-            <Button Grid.Row="1" Content="Change Color" Command="local:MainWindow.changeColor"/>
+            <Button Grid.Row="1" Content="Change Color" Command="local:MainWindow.changeColor" CommandParameter="{Binding /Id}"/>
         </Grid>
 
 
