@@ -50,24 +50,31 @@
                 </StackPanel>
             </Border>
             <Border>
-                <ListBox ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" Name="BookListItems" Background="Azure">
+                <ListBox Grid.IsSharedSizeScope="True" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" Name="BookListItems" Background="Azure">
                     <ListBox.ItemTemplate>
                         <DataTemplate DataType="{x:Type models:Book}">
                             <Border BorderBrush="AliceBlue" BorderThickness="2" HorizontalAlignment="Stretch">
                                 <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition></RowDefinition>
-                                    </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
+                                        <!--<ColumnDefinition Width="{Binding ElementName=BookListItems, Path=ActualWidth}" />-->
+                                        <ColumnDefinition SharedSizeGroup="Group1" />
                                     </Grid.ColumnDefinitions>
-                                    
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Name="txtBlockTitle">Titel:</TextBlock>
-                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title, Mode=OneWay}"/>
-                                    <TextBlock Grid.Row="1" Grid.Column="0">Publisher:</TextBlock>
-                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Publisher, Mode=OneWay}" />
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Name="txtBlockTitle">Titel:</TextBlock>
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title, Mode=OneWay}"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="0">Publisher:</TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Publisher, Mode=OneWay}" />
+                                    </Grid>
                                 </Grid>
                             </Border>
                         </DataTemplate>
@@ -97,5 +104,5 @@
         <!--<Button Content="{StaticResource myBook}" />-->
 
     </Grid>
-    
+
 </Window>

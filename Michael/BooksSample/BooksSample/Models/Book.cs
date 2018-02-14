@@ -36,6 +36,7 @@ namespace BooksSample.Models
             ret.Add(new Book("Professional C# 7", "Wrox Press3", "33478234"));
             _id++;
             ret.Add(new Book("Professional C# 8", "Wrox Press4", "43478234"));
+            ret.Add(new Book("Short", "Short", "1234"));
             return ret;
         }
     }
