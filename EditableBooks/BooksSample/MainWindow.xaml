@@ -1,0 +1,71 @@
+﻿<Window x:Class="BooksSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BooksSample"
+        xmlns:ext="clr-namespace:BooksSample.Extensions"
+        xmlns:models="clr-namespace:BooksSample.Models"
+        xmlns:conv="clr-namespace:BooksSample.Converters"
+        mc:Ignorable="d"
+        Title="Books Sample" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin" Value="4" />
+            </Style.Setters>
+        </Style>
+        <conv:StringCollectionToStringConverter x:Key="StringConverter" />
+
+        <DataTemplate DataType="{x:Type models:Book}" x:Key="BookTemplate">
+            <Border BorderBrush="Red" BorderThickness="4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                    <TextBlock Text="{Binding Publisher, Mode=OneWay}" />
+                </StackPanel>
+            </Border>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type models:Book}" x:Key="DefaultBookTemplate">
+            <Border BorderBrush="Blue" BorderThickness="4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                    <TextBlock Text="{Binding Publisher, Mode=OneWay}" />
+                </StackPanel>
+            </Border>
+
+        </DataTemplate>
+
+        <ext:BookTemplateSelector x:Key="BookTemlpateSelector" WroxBookTemplate="{StaticResource BookTemplate}" DefaultBookTemplate="{StaticResource DefaultBookTemplate}" />
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <ListBox Grid.RowSpan="2" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" ItemTemplateSelector="{StaticResource BookTemlpateSelector}">
+        </ListBox>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Width="5" />
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Title" />
+            <TextBox Text="{Binding /Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=200}" />
+            <TextBlock Text="Publisher" />
+            <TextBox Text="{Binding /Publisher, Mode=TwoWay}" />
+            <TextBlock Text="Isbn" />
+            <TextBox Text="{Binding /Isbn, Mode=TwoWay}" />
+            <TextBlock Text="Authors" />
+            <TextBlock Text="{Binding /Authors, Converter={StaticResource StringConverter}, ConverterParameter=', '}" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
+            <Button Content="Change Book" Click="OnChangeBook" />
+            <Button Content="Add Book" Click="OnAddBook" />
+        </StackPanel>
+    </Grid>
+</Window>
