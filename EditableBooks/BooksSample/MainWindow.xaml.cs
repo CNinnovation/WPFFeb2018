@@ -39,5 +39,10 @@ namespace BooksSample
             var book = _books.Single(b => b.Title == "Professional C# 6");
             book.Title = "Professional C# 7";
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
