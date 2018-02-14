@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ValidationSample
 {
-    public class SomeData : IDataErrorInfo, INotifyDataErrorInfo
+    public class SomeData : IDataErrorInfo
     {
         private int _x;
 
