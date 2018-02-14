@@ -6,14 +6,24 @@
         xmlns:local="clr-namespace:BooksSample"
         xmlns:models="clr-namespace:BooksSample.Models"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="550" Width="825">
     <!-- XML alias to .NET namespace - xmlns:... -->
     <Window.Resources>
         <!-- use the XML alias to create a .NET object -->
         <models:Book x:Key="myBook" Title="Professional C# 7" Publisher="Wrox Press" Isbn="3747834783" />
+        <Style TargetType="Border">
+            <Style.Setters>
+                <Setter Property="BorderBrush" Value="Black" />
+                <Setter Property="BorderThickness" Value="2" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="1" />
+            </Style.Setters>
+        </Style>
     </Window.Resources>
     <Window.CommandBindings>
         <CommandBinding Command="local:MainWindow.deleteBook" Executed="OnDeleteBook" CanExecute="OnDeleteBookCanExecute" />
+        <CommandBinding Command="local:MainWindow.editBook" Executed="OnEditBook"/>
+        <CommandBinding Command="local:MainWindow.changeColor" Executed="OnChangeColor"/>
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
@@ -26,27 +36,61 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
-             <ListBox  Name="BookList">
-
-            </ListBox>
+            <Border>
+                <StackPanel>
+                    <TextBlock>
+                        Add or Edit a Book:
+                    </TextBlock>
+                    <TextBlock Name="txtBlockTitle">Titel:</TextBlock>
+                    <TextBox Name="txtTitle" Text="{Binding /Title, Mode=OneWay}"></TextBox>
+                    <TextBlock>Publisher:</TextBlock>
+                    <TextBox Name="txtPublisher" Text="{Binding /Publisher, Mode=OneWay}"></TextBox>
+                    <TextBlock>ISBN:</TextBlock>
+                    <TextBox Name="txtISBN" Text="{Binding /Isbn, Mode=OneWay}" ></TextBox>
+                </StackPanel>
+            </Border>
+            <Border>
+                <ListBox ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" Name="BookListItems" Background="Azure">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type models:Book}">
+                            <Border BorderBrush="AliceBlue" BorderThickness="2" HorizontalAlignment="Stretch">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Name="txtBlockTitle">Titel:</TextBlock>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Title, Mode=OneWay}"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="0">Publisher:</TextBlock>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Publisher, Mode=OneWay}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
         </StackPanel>
-        <DockPanel  Grid.Row="0" Grid.Column="2">
-            <Button Content="Dock=Top" DockPanel.Dock="Top"/>
-            <Button Content="Dock=Right" DockPanel.Dock="Right"/>
-            <Canvas DockPanel.Dock="Left">
-                
-            </Canvas>
-        </DockPanel>
-    
+        <Border Grid.Row="0" Grid.Column="2">
+            <StackPanel  >
+                <TextBlock Text="{Binding /Title}" />
+                <TextBlock Text="{Binding /Publisher}" />
+                <TextBlock Text="{Binding /Isbn}" />
+            </StackPanel>
+        </Border>
         <Button  Grid.Row="1" Grid.Column="0" Content="Add Book" Click="addBook"/>
-        <Button  Grid.Row="1" Grid.Column="1" Content="Edit Book" />
+        <Button  Grid.Row="1" Grid.Column="1" Content="Edit Book" Command="local:MainWindow.editBook" CommandParameter="{Binding /Id}"/>
         <Grid Grid.Row="1" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Content="Delete Book" Command="local:MainWindow.deleteBook"/>
-            <Button Grid.Row="1" Content="Change Color"/>
+            <Button Grid.Row="0" Content="Delete Book" Command="local:MainWindow.deleteBook" CommandParameter="{Binding /Id}"/>
+            <Button Grid.Row="1" Content="Change Color" Command="local:MainWindow.changeColor"/>
         </Grid>
 
 
