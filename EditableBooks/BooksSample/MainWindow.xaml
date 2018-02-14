@@ -50,7 +50,10 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <ListBox Grid.RowSpan="2" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" ItemTemplateSelector="{StaticResource BookTemlpateSelector}">
+        <ListBox Grid.RowSpan="2" 
+                 ItemsSource="{Binding}" 
+                 IsSynchronizedWithCurrentItem="True" 
+                 ItemTemplateSelector="{StaticResource BookTemlpateSelector}">
         </ListBox>
         <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Width="5" />
         <StackPanel Grid.Column="1">
