@@ -1,0 +1,18 @@
+﻿<Window x:Class="TheSimplestMVVMAppWithWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TheSimplestMVVMAppWithWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <TextBox Text="{Binding ViewModel.Input, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="Click Me!" Command="{Binding ViewModel.ActionCommand, Mode=OneTime}" />
+            <TextBlock Text="{Binding ViewModel.Output, Mode=OneWay}" />
+            <TextBlock Text="{Binding ViewModel.Output, Mode=OneTime}"  />
+        </StackPanel>
+
+    </Grid>
+</Window>
