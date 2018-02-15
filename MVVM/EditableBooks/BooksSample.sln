@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksSample.Les02", "BooksSample\BooksSample.Les02.csproj", "{C1866E00-7FF4-4632-96E1-759245B36639}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksSample", "BooksSample\BooksSample.csproj", "{C1866E00-7FF4-4632-96E1-759245B36639}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheBestMVVMFrameworkInTown", "TheBestMVVMFrameworkInTown\TheBestMVVMFrameworkInTown.csproj", "{B8FC5D52-59EB-4753-A772-825FBB75CB70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksLib", "BooksLib\BooksLib.csproj", "{541322B8-4F1D-4BC6-B3CE-CB99A2217DE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksLib", "BooksLib\BooksLib.csproj", "{541322B8-4F1D-4BC6-B3CE-CB99A2217DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
