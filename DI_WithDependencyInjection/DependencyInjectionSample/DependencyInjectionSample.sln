@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionSample",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionSample.Tests", "DependencyInjectionSample.Tests\DependencyInjectionSample.Tests.csproj", "{C6AD697A-42AA-4B7D-817F-91085E5A37F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionSample.Tests1", "DependencyInjectionSample.Tests1\DependencyInjectionSample.Tests1.csproj", "{768C3C38-C573-482C-A70B-698D5F28D22A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{C6AD697A-42AA-4B7D-817F-91085E5A37F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6AD697A-42AA-4B7D-817F-91085E5A37F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6AD697A-42AA-4B7D-817F-91085E5A37F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{768C3C38-C573-482C-A70B-698D5F28D22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{768C3C38-C573-482C-A70B-698D5F28D22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{768C3C38-C573-482C-A70B-698D5F28D22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{768C3C38-C573-482C-A70B-698D5F28D22A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
