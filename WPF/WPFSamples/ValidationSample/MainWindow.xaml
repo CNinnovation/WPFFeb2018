@@ -18,6 +18,8 @@
             <DockPanel>
                 <TextBlock Foreground="Red" FontSize="40">!</TextBlock>
                 <AdornedElementPlaceholder/>
+              
+            
             </DockPanel>
         </ControlTemplate>
     </Window.Resources>
