@@ -25,8 +25,6 @@ namespace SimpleUserControl
             InitializeComponent();
         }
 
-
-
         public int Min
         {
             get { return (int)GetValue(MinProperty); }
@@ -37,9 +35,6 @@ namespace SimpleUserControl
         public static readonly DependencyProperty MinProperty =
             DependencyProperty.Register(nameof(Min), typeof(int), typeof(SpinnerUserControl), new PropertyMetadata(0));
 
-
-
-
         public int Max
         {
             get { return (int)GetValue(MaxProperty); }
@@ -49,8 +44,6 @@ namespace SimpleUserControl
         // Using a DependencyProperty as the backing store for Max.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxProperty =
             DependencyProperty.Register(nameof(Max), typeof(int), typeof(SpinnerUserControl), new PropertyMetadata(100));
-
-
 
         public int Value
         {
@@ -64,9 +57,10 @@ namespace SimpleUserControl
 
         private static object CoerceValue(DependencyObject d, object baseValue)
         {
+            SpinnerUserControl it = (SpinnerUserControl)d;
             int val = (int)baseValue;
-            if (val > 100) val = 100;
-            if (val < 0) val = 0;
+            if (val > it.Max) val = it.Max;
+            if (val < it.Min) val = it.Min;
             return val;
         }
 

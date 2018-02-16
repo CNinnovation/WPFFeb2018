@@ -102,9 +102,10 @@ namespace SimpleCustomControl
 
         private static object CoerceValue(DependencyObject d, object baseValue)
         {
+            SpinnerCustomControl it = (SpinnerCustomControl)d;
             int val = (int)baseValue;
-            if (val > 100) val = 100;
-            if (val < 0) val = 0;
+            if (val > it.Max) val = it.Max;
+            if (val < it.Min) val = it.Min;
             return val;
         }
 

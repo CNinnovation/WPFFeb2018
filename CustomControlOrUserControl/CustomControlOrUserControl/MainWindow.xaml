@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomControlOrUserControl"
         xmlns:uc="clr-namespace:SimpleUserControl;assembly=SimpleUserControl" 
-    xmlns:cc="clr-namespace:SimpleCustomControl;assembly=SimpleCustomControl"
+        xmlns:cc="clr-namespace:SimpleCustomControl;assembly=SimpleCustomControl"
         x:Class="CustomControlOrUserControl.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
@@ -16,7 +16,8 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <uc:SpinnerUserControl HorizontalAlignment="Left" Height="50" Width="100" />
+        <uc:SpinnerUserControl HorizontalAlignment="Left" Height="50" Width="100" Max="42"  />
         <cc:SpinnerCustomControl Grid.Column="1" Height="50" Width="100" />
+
     </Grid>
 </Window>
