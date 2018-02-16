@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Media;
 
 namespace BooksSample.Models
 {
@@ -23,6 +24,7 @@ namespace BooksSample.Models
         public string Title { get; set; }
         public string Publisher { get; set; }
         public string Isbn { get; set; }
+        public Brush Background { get; set; }
 
         public override string ToString() => Title;
 

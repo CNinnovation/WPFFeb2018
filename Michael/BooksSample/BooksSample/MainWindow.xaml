@@ -57,10 +57,10 @@
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <!--<ColumnDefinition Width="{Binding ElementName=BookListItems, Path=ActualWidth}" />-->
-                                        <ColumnDefinition SharedSizeGroup="Group1" />
+                                        <ColumnDefinition SharedSizeGroup="Group1"  Width="490"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <Grid>
+                                    <Grid Background="{Binding Background, Mode=TwoWay}">
                                         <Grid.RowDefinitions>
                                             <RowDefinition></RowDefinition>
                                             <RowDefinition></RowDefinition>

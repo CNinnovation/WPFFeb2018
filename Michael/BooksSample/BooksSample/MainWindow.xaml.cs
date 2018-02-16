@@ -80,6 +80,7 @@ namespace BooksSample
                     item.Title = txtTitle.Text;
                     item.Publisher = txtPublisher.Text;
                     item.Isbn = txtISBN.Text;
+                    break;
                 }
             }
         }
@@ -102,16 +103,15 @@ namespace BooksSample
             BrushList.Add((Brush)(new BrushConverter().ConvertFromString("#9EB01C")));
 
             Random x = new Random();
-            BookListItems.Background = BrushList[x.Next(BrushList.Count)];
+            //BookListItems.Background = BrushList[x.Next(BrushList.Count)];
 
-            //foreach (var item in BookList)
-            //{
-            //    if (item.Id == (int)e.Parameter)
-            //    {
-            //        item.Background = BrushList[x.Next(BrushList.Count)];
-            //    }
-            //}
-
+            foreach (var item in BookList)
+            {
+                if (item == BookListItems.Items.CurrentItem)
+                {
+                    item.Background = BrushList[x.Next(BrushList.Count)];
+                }
+            }
 
         }
 
